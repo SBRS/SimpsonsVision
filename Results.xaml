@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpsonsVision.Results" Title="Results">
+	<ContentPage.Content>
+        <StackLayout>
+            <Button Text="Show Results" TextColor="White" BackgroundColor="Black" Clicked="Get_Results" />
+            <ListView x:Name="SimpsonsVisionTableList" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Tag}" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="20,0,0,0" />
+                                <Label Text="{Binding Prediction, StringFormat='{0:0.##\\%}'}" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+                                <Label Text="{Binding Longitude, StringFormat='Longitude: {0:N}'}" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+                                <Label Text="{Binding Latitude, StringFormat='Latitude: {0:N}'}" VerticalTextAlignment="Center" Margin="0,0,20,0" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>
